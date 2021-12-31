@@ -63,7 +63,7 @@ const Notes = () => {
 					id=""
 				></textarea>
 				{/* {console.log(notesList)} */}
-				<button type="submit">
+				{/* <button type="submit">
 					<svg
 						width="50"
 						height="50"
@@ -85,7 +85,7 @@ const Notes = () => {
 							</clipPath>
 						</defs>
 					</svg>
-				</button>
+				</button> */}
 			</form>
 			<div className="hr shrink"></div>
 			<div className="notes">
