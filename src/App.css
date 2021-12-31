@@ -1,38 +1,103 @@
 .App {
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    letter-spacing: 1px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.hr {
+    height: 1px;
+    width: 100%;
+    background: hsla(0, 0%, 100%, 0.363);
+    border-radius: 1px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.shrink {
+    width: calc(100% - 2rem);
 }
 
-.App-link {
-  color: #61dafb;
+.content {
+    display: flex;
+    flex-direction: column;
+    /* gap: 0.5rem; */
+    width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.blurr_container {
+    /* border: 1px solid; */
+    padding: 1rem;
+    border-radius: 0.5rem;
+    filter: blur(0px);
+    /* background: hsla(254, 50%, 100%, 0.05); */
+
+    animation: blurr_anim 0.5s ease-in 2s forwards;
+    background: hsla(254, 50%, 100%, 0);
+    transition: filter 0.2s ease-in, background 0.2s ease-in, opacity 0.5s ease-in;
+}
+
+.fade_in {
+    opacity: 0;
+    animation: fade_in_animation 0.5s ease-in forwards;
+}
+
+.blurr_container:hover {
+    background: hsla(254, 50%, 100%, 0.1);
+    filter: blur(0px) !important;
+    opacity: 1 !important;
+}
+
+.forward {
+    /* padding: 1rem; */
+    /* border: 1px solid; */
+    max-width: max-content;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background 0.2s ease-in;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    height: 50px;
+
+    padding: 1rem;
+    padding-right: 0;
+}
+
+.forward:hover {
+    background: hsla(254, 50%, 100%, 0.1);
+}
+
+@keyframes fade_in_animation {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes blurr_anim {
+    from {
+        filter: blur(0px);
+    }
+
+    to {
+        filter: blur(2px);
+        opacity: 0.5;
+    }
+}
+
+@keyframes blurr_hover_anim {
+    from {
+    }
+
+    to {
+        /* opacity: 1; */
+    }
 }
