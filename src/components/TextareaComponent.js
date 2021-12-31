@@ -76,6 +76,14 @@ const Container = styled.div`
 		transition: opacity 500ms ease-in;
 	}
 
+	@media only screen and (max-width: 600px) {
+		.timestamp {
+			top: 1rem;
+			left: unset;
+			right: 1rem;
+		}
+	}
+
 	textarea {
 		::-webkit-scrollbar {
 			width: 0;
