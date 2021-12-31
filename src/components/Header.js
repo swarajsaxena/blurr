@@ -15,7 +15,7 @@ const Header = () => {
 					Meet The Creator
 				</a>
 				<a
-					href="http://swarajsaxena.vercel.app"
+					href="https://github.com/swarajsaxena/blurr"
 					target="_blank"
 					rel="noopener noreferrer"
 					style={{ padding: "0" }}

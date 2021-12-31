@@ -13,3 +13,5 @@ Clear Your Mind Through Expressive writing.
 ---
 
 ![Main Page](/images_assets/2.png)
+
+[Visit The Site Here](https://blurr.vercel.app/)
