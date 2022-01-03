@@ -13,6 +13,18 @@ const Notes = () => {
 		window.localStorage.setItem("_notesList_", JSON.stringify(notesList));
 	}, [notesList]);
 
+	const removeNote = noteId => {
+		const updatedNotes = notesList.filter(note => note.id !== noteId);
+		setNotesList(updatedNotes);
+	};
+
+	const EditNewNote = (noteId, newText) => {
+		const updatedNotes = notesList.map(note =>
+			note.id === noteId ? { ...note, text: newText } : note
+		);
+		setNotesList(updatedNotes);
+	};
+
 	const doThis = event => {
 		event.target.style.height = "34px";
 		event.target.style.height = `${event.target.scrollHeight}px`;
@@ -50,7 +62,17 @@ const Notes = () => {
 
 	return (
 		<Container>
-			<h1 className="shrink">Today</h1>
+			<h1 className="shrink">
+				Today
+				<div className="key_func">
+					<div className="func">Add Line: </div>
+					<div className="key">Shift</div> +<div className="key">Enter</div>
+				</div>
+				<div className="key_func">
+					<div className="func">Add New Thought: </div>
+					<div className="key">Enter</div>
+				</div>
+			</h1>
 			<form
 				action=""
 				// onSubmit={onSubmit}
@@ -91,7 +113,12 @@ const Notes = () => {
 			<div className="notes">
 				{notesList &&
 					notesList.map((note, index) => (
-						<TextareaComponent data={note} key={index} />
+						<TextareaComponent
+							data={note}
+							editNote={EditNewNote}
+							removeNote={removeNote}
+							key={index}
+						/>
 					))}
 			</div>
 		</Container>
@@ -107,6 +134,27 @@ const Container = styled.div`
 	opacity: 0;
 
 	animation: notes_fade_in 0.5s 0.5s forwards ease-in;
+
+	.shrink {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		.key_func {
+			opacity: 0.5;
+			padding: 0 0.5rem;
+			display: flex;
+			align-items: center;
+			gap: 0.2rem;
+			font-size: 0.8rem;
+			font-weight: 400;
+
+			.key {
+				background: hsl(240, 50%, 100%, 0.2);
+				padding: 0.2rem;
+				border-radius: 0.1rem;
+			}
+		}
+	}
 
 	@keyframes notes_fade_in {
 		from {

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 const Hello = ({ setOnboarding }) => {
 	const firstElement = (
@@ -83,7 +83,7 @@ const Hello = ({ setOnboarding }) => {
 				{firstElementStete ? firstElement : <></>}
 				{secondElementStete ? secondElement : <></>}
 				{thirdElementStete ? thirdElement : <></>}
-				{/* {fourthElementStete ? fourthElement : <></>} */}
+				{fourthElementStete ? fourthElement : <></>}
 				{fifthElementStete ? fifthElement : <></>}
 				{sixthElementStete ? sixthElement : <></>}
 			</div>
