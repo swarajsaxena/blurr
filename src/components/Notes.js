@@ -165,7 +165,10 @@ const Container = styled.div`
 		}
 	}
 
-	.field {
+	@media only screen and (max-width: 600px) {
+		.key_func {
+			display: none !important;
+		}
 	}
 
 	form {
